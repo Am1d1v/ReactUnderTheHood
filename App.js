@@ -6,16 +6,17 @@ import Button from './components/Button';
 
 function App() {
 
-  const [isParagraphShown, setIsParagraphShown] = useState(false);
+  const [isParagraphShown, setIsParagraphShown] = useState(true);
 
-  const setIsParagraphShownHandler = () => {
-    setIsParagraphShown(true);
+  const setIsParagraphShownToggle = () => {
+    setIsParagraphShown(!isParagraphShown);
   }
 
   return (
     <div className="App">
       <h1>H1 Element</h1>
-      <Button />
+      {isParagraphShown && <p>New Paragraph</p>}
+      <Button toggle={setIsParagraphShownToggle} />
     </div>
   );
 }
